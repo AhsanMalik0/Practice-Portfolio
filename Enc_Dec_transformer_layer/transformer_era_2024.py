@@ -26,7 +26,7 @@ from nltk.translate.bleu_score import sentence_bleu
 from datasets import load_dataset
 from huggingface_hub import login
 
-login(token="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")
+login(token="paste your hf token")
 
 ds = load_dataset("nampdn-ai/tiny-codes")
 
@@ -58,9 +58,6 @@ print(labels.shape)
 vocab_size = len(tokenizer.word_index) + 1
 seq_len
 
-BATCH_SIZE = 1
-dataset = tf.data.Dataset.from_tensor_slices((inputs, labels))
-dataset = dataset.shuffle(buffer_size=1000).batch(BATCH_SIZE)
 
 BATCH_SIZE = 2
 
